@@ -11,7 +11,14 @@ import * as d3 from 'd3';
 
 import constants from './Constants.jsx';
 
-let timer, g, path;
+let timer, g, path, path_prefix;
+
+if (location.href.match('localhost')) {
+  path_prefix = './';
+}
+else {
+  path_prefix = 'https://raw.githubusercontent.com/ebuddj/2021-2021-euro2020venues/main/public/';
+}
 
 function getHashValue(key) {
   let matches = location.hash.match(new RegExp(key+'=([^&]*)'));
@@ -82,7 +89,7 @@ class App extends Component {
         .enter()
         .append('svg:image')
         // .attr('xlink:href', './media/img/stadium.png')
-        .attr('xlink:href', './media/img/stadium-icon-png-25.jpg')
+        .attr('xlink:href', path_prefix + 'media/img/stadium-icon-png-25.jpg')
         .attr('width', 50)
         .attr('height', 50)
         .attr('class', style.stadium)
