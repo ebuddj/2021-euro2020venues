@@ -17,7 +17,7 @@ if (location.href.match('localhost')) {
   path_prefix = './';
 }
 else {
-  path_prefix = 'https://raw.githubusercontent.com/ebuddj/2021-2021-euro2020venues/main/public/';
+  path_prefix = 'https://raw.githubusercontent.com/ebuddj/2021-euro2020venues/main/public/';
 }
 
 function getHashValue(key) {
