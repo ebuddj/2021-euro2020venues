@@ -37,7 +37,7 @@ class App extends Component {
     
     this.state = {
       data:{},
-      title:'Original EURO2020 Venues'
+      title:'Original EURO2020 Host Cities'
     }
   }
   componentDidMount() {
@@ -168,7 +168,7 @@ class App extends Component {
       .style('opacity', 1);
     
     this.setState((state, props) => ({
-      title:'Final EURO2020 Venues'
+      title:'Final EURO2020 Host Cities'
     }));
   }
   componentWillUnMount() {

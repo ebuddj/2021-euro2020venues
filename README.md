@@ -2,10 +2,10 @@
 
 **Live demo** https://ebuddj.github.io/2021-euro2020venues/
 
-## Project title
+## EURO2020 Host Cities
 
 **Sources**
-* []()
+* [UEFA](https://www.uefa.com/insideuefa/mediaservices/mediareleases/news/0268-121bc78c82d5-1ba16401b4f0-1000--change-of-venues-for-some-uefa-euro-2020-matches-announced/)
 
 **EBU links**
 * []()
