@@ -118,10 +118,10 @@ class App extends Component {
           return (d.city === 'Sevilla' ? 0 : 1);
         })
         .attr('x', (d, i) => {
-          return projection([d.lon, d.lat])[0];
+          return (['Denmark'].includes(d.country)) ? projection([d.lon, d.lat])[0] + 65 : projection([d.lon, d.lat])[0];
         })
         .attr('y', (d, i) => {
-          return (['Scotland','The Netherlands','Denmark'].includes(d.country)) ? projection([d.lon, d.lat])[1] - 27 : projection([d.lon, d.lat])[1] + 27;
+          return (['Scotland','The Netherlands'].includes(d.country)) ? projection([d.lon, d.lat])[1] - 27 : (['Denmark',].includes(d.country)) ? projection([d.lon, d.lat])[1] : projection([d.lon, d.lat])[1] + 27;
         }).html((d, i) => {
           // return parseInt(d.capacity).toLocaleString();
           return d.city;
@@ -140,11 +140,11 @@ class App extends Component {
       .style('fill', 'black');
 
       [[
-        projection([-6.2306456,53.3352318]),projection([26.5,59.972728])
+        projection([-6.2306456,53.3352318]),projection([26.5,60])
       ],[
-        projection([-6.2306456,53.3352318]),projection([9.2,55.6929944])
+        projection([-6.2306456,53.3352318]),projection([-3.4,52.4])
       ],[
-        projection([-2.9468902,43.2613696]),projection([-5.006821,39.4171707])
+        projection([-2.9468902,43.2613696]),projection([-5,39.4])
       ]].forEach((data) => {
         svg.append('path')
         .attr('marker-end', 'url(#triangle)')
