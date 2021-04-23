@@ -61,7 +61,7 @@ class App extends Component {
 
     d3.json('./data/europe.topojson').then((topology) => {
       // Add European countries.
-      g.selectAll('path').data(topojson.feature(topology, topology.objects.europe).features)
+      g.selectAll(style.path).data(topojson.feature(topology, topology.objects.europe).features)
         .enter()
         .append('path')
         .attr('d', path)
@@ -73,7 +73,7 @@ class App extends Component {
           return '#f5f5f5';
         });
       // Add Kosovo.
-      g.append('path').datum({type:'Polygon',properties:{'NAME':'Kosovo'},coordinates:constants.kosovo})
+      g.append(style.path).datum({type:'Polygon',properties:{'NAME':'Kosovo'},coordinates:constants.kosovo})
         .attr('d', path)
         .attr('class', style.kosovo)
         .style('stroke', (d, i) => {
@@ -127,9 +127,38 @@ class App extends Component {
           return d.city;
         });
 
+    svg.append('svg:defs').append('svg:marker')
+      .attr('id', 'triangle')
+      .attr('refX', 6)
+      .attr('refY', 6)
+      .attr('markerWidth', 30)
+      .attr('markerHeight', 30)
+      .attr('markerUnits','userSpaceOnUse')
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M 0 0 12 6 0 12 3 6')
+      .style('fill', 'black');
+
+      [[
+        projection([-6.2306456,53.3352318]),projection([26.5,59.972728])
+      ],[
+        projection([-6.2306456,53.3352318]),projection([9.2,55.6929944])
+      ],[
+        projection([-2.9468902,43.2613696]),projection([-5.006821,39.4171707])
+      ]].forEach((data) => {
+        svg.append('path')
+        .attr('marker-end', 'url(#triangle)')
+        .attr('d', 'M ' + data[0][0] + ',' + data[0][1] + ' ' + (data[1][0]) + ',' + (data[1][1]))
+        .style('opacity', 0)
+        .attr('class', style.edge)
+        .attr('stroke', '#000')
+        .attr("stroke-width", '1.5')
+        .attr('fill', 'transparent');
+      });
+
       timer = setTimeout(() => {
         this.changeAreaAttributes();
-      }, 3000);
+      }, 2000);
     });
   }
   changeAreaAttributes() {
@@ -138,6 +167,9 @@ class App extends Component {
     svg.selectAll('.stadium_12')
       .style('opacity', 1);
 
+    svg.selectAll('.' + style.edge)
+      .style('opacity', 0.6);
+    
     this.setState((state, props) => ({
       title:'Final EURO2020 Venues'
     }));
