@@ -4,11 +4,13 @@
 
 ## EURO2020 Host Cities
 
+The animation shows the changes in EURO2020 hosting cities as of 23 April 2021.
+
 **Sources**
 * [UEFA](https://www.uefa.com/insideuefa/mediaservices/mediareleases/news/0268-121bc78c82d5-1ba16401b4f0-1000--change-of-venues-for-some-uefa-euro-2020-matches-announced/)
 
 **EBU links**
-* []()
+* [News Exchange](https://news-exchange.ebu.ch/item_detail/053a1590a8b11cd3fcc70281e911ab82/2021_20010363)
 
 **Used by**
 * []()
