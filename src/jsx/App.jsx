@@ -137,7 +137,7 @@ class App extends Component {
       .attr('orient', 'auto')
       .append('path')
       .attr('d', 'M 0 0 12 6 0 12 3 6')
-      .style('fill', 'black');
+      .style('fill', '#000');
 
       [[
         projection([-6.2306456,53.3352318]),projection([26.5,60])
@@ -164,10 +164,7 @@ class App extends Component {
   changeAreaAttributes() {
     svg.selectAll('.stadium_8, .stadium_10')
       .style('opacity', 0.1);
-    svg.selectAll('.stadium_12')
-      .style('opacity', 1);
-
-    svg.selectAll('.' + style.edge)
+    svg.selectAll('.stadium_12, .' + style.edge)
       .style('opacity', 1);
     
     this.setState((state, props) => ({
