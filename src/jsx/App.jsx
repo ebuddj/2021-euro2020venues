@@ -168,7 +168,7 @@ class App extends Component {
       .style('opacity', 1);
 
     svg.selectAll('.' + style.edge)
-      .style('opacity', 0.6);
+      .style('opacity', 1);
     
     this.setState((state, props) => ({
       title:'Final EURO2020 Venues'
