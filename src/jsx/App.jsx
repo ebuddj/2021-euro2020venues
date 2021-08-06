@@ -138,7 +138,6 @@ class App extends Component {
       .append('path')
       .attr('d', 'M 0 0 12 6 0 12 3 6')
       .style('fill', '#000');
-
       [[
         projection([-6.2306456,53.3352318]),projection([26.5,60])
       ],[
