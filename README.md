@@ -2,7 +2,7 @@
 
 **Live demo** https://ebuddj.github.io/2021-euro2020venues/
 
-## EURO2020 Host Cities (EBU)
+## Euro 2020 Host Cities (EBU)
 
 The animation shows the changes in EURO2020 hosting cities as of 23 April 2021.
 
